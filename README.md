@@ -20,13 +20,17 @@ En este sentido, hay razones para creer que hay simultaneidad entre tasa de infl
 Además, es posible que haya otros factores que influyan en la relación entre esas dos variables, por ejemplo mayor actividad económica podría promover una mayor intensidad en la actualización de precios frente a una depreciación del tipo de cambio
 nominal. Para aislar el efecto debemos introducir controles en el modelo.
 
-El ERPT se define como:
+## Estrategia econométrica 
 
-$ERPT_{t,t+h}=\frac{p_{t+h}-p_t}{}$
+La especificación que utlizamos es la siguiente:
 
 $$
 p_{t+h}-p_{t-1} = a_h + \beta_h\Delta e_t + \sum_{j=1}^q \rho_{j,h} \Delta p_{t-j} + \sum_{j=1}^q \theta_{j,h} \Delta e_{t-j} + \mathbf{x}'\mu_h+ \epsilon_{i,t+h}
 $$
+
+donde $p_{t}$ es el logaritmo natural del índice de precios al consumidor construído a partir de un empalme entre el IPC INDEC e IPC San Luis, $\Delta e_t$ es la primera diferencia del
+logaritmo del tipo de cambio nominal mayorista cuya fuente de información es BCRA. Finalmente, incluímos un único control, la brecha de producto (Output Gap) a partir de la serie EMAE
+de INDEC desestacionalizada.
 
 $ERPT_{t,t+h} = \frac{p_{t+h}-p_{t-1}}{\Delta e_t} = \beta_h$
 

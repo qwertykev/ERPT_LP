@@ -32,7 +32,10 @@ donde $p_{t}$ es el logaritmo natural del índice de precios al consumidor const
 logaritmo del tipo de cambio nominal mayorista cuya fuente de información es BCRA. Finalmente, incluímos un único control, la brecha de producto (Output Gap) a partir de la serie EMAE
 de INDEC desestacionalizada.
 
-$ERPT_{t,t+h} = \frac{p_{t+h}-p_{t-1}}{\Delta e_t} = \beta_h$
+El ERPT se define como:
 
+$$
+ERPT_{t,t+h} = \frac{p_{t+h}-p_{t-1}}{\Delta e_t} = \beta_h
+$$
 ![ERPT]([https://github.com/tu_usuario/tu_repositorio/blob/main/imagenes/ejemplo.png](https://github.com/qwertykev/ERPT_LP/blob/main/ERPT.svg))
 

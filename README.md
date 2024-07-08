@@ -37,5 +37,10 @@ El ERPT se define como:
 $$
 ERPT_{t,t+h} = \frac{p_{t+h}-p_{t-1}}{\Delta e_t} = \beta_h
 $$
-![ERPT]([https://github.com/tu_usuario/tu_repositorio/blob/main/imagenes/ejemplo.png](https://github.com/qwertykev/ERPT_LP/blob/main/ERPT.svg))
+
+Finalmente, el gráfico es:
+
+<p align="center">
+  <img src="https://github.com/qwertykev/ERPT_LP/blob/main/ERPT_PLOT.png" alt="Mi Imagen SVG de Ejemplo">
+</p>
 

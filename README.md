@@ -29,3 +29,6 @@ p_{t+h}-p_{t-1} = a_h + \beta_h\Delta e_t + \sum_{j=1}^q \rho_{j,h} \Delta p_{t-
 $$
 
 $ERPT_{t,t+h} = \frac{p_{t+h}-p_{t-1}}{\Delta e_t} = \beta_h$
+
+![ERPT]([https://github.com/tu_usuario/tu_repositorio/blob/main/imagenes/ejemplo.png](https://github.com/qwertykev/ERPT_LP/blob/main/ERPT.svg))
+

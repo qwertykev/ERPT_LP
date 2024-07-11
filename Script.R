@@ -40,7 +40,8 @@ df$outputgap <- emae_hp$cycle
 # Variación del tipo de cambio
 ###############################################################
 
-df$vtc <- c(rep(NA,1), diff(log(df$TC)))
+df$vtc <- c(diff(log(df$TC)),rep(NA,1))
+
 
 ###############################################################
 # Tasa de inflación acumulada
@@ -53,22 +54,21 @@ for (h in 1:hmax) {
   # Calculate the log difference with the specified lag
   infl_diff <- diff(log(df$IPC), lag=h)
   # Create a vector of NA values to match the length of the original data
-  infl_diff_padded <- c(rep(NA, h), infl_diff)
+  infl_diff_padded <- c(infl_diff,rep(NA, h))
   # Assign the new column to the data frame
   df[[nm]] <- infl_diff_padded
 }
 
-df <- df[-1,]
+
 ###############################################################
 # Local Projections by OLS
 ###############################################################
-df <- ts(df, start = c(2004,1), frequency = 12)
+df <- ts(df, start = c(2004,1), end = c(2019,12), frequency = 12)
 bh <- matrix(nrow = hmax, ncol = 3)
 
 for (h in 1:hmax) {
   
-  reg <- dynlm(df[,ncol(df)-hmax+h] ~ vtc + L(vtc, 1:2) + L(outputgap, 1:2)  +
-                 L(infl0, 1:2),
+  reg <- dynlm(df[,ncol(df)-hmax+h] ~ vtc + L(vtc, 1:2) + L(infl0, 1:2),
                data = df)  
   
   coefs=coeftest(reg, vcov=NeweyWest(reg, lag = h, prewhite = FALSE, adjust = T))

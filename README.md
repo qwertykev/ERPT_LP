@@ -29,8 +29,7 @@ p_{t+h}-p_{t-1} = a_h + \beta_h\Delta e_t + \sum_{j=1}^q \rho_{j,h} \Delta p_{t-
 $$
 
 donde $p_{t}$ es el logaritmo natural del índice de precios al consumidor construído a partir de un empalme entre el IPC INDEC e IPC San Luis, $\Delta e_t$ es la primera diferencia del
-logaritmo del tipo de cambio nominal mayorista cuya fuente de información es BCRA. Finalmente, incluímos un único control, la brecha de producto (Output Gap) a partir de la serie EMAE
-de INDEC desestacionalizada.
+logaritmo del tipo de cambio nominal mayorista cuya fuente de información es BCRA. 
 
 El ERPT se define como:
 
